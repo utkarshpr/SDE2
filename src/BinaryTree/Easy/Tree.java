@@ -1,13 +1,13 @@
 package BinaryTree.Easy;
 
 public class Tree {
-        int data;
-    Tree left;
-    Tree right;
+       public int data;
+    public Tree left;
+    public Tree right;
 
         // Constructor to initialize
         // the node with a value
-        Tree(int val) {
+        public Tree(int val) {
             data = val;
             left = null;
             right = null;
