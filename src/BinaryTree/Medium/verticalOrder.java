@@ -5,7 +5,7 @@ import org.w3c.dom.Node;
 
 import java.util.*;
 
-import static BinaryTree.Medium.TopView.print;
+
 import static BinaryTree.Medium.ZigZagTraversal.printResult;
 
 
@@ -32,7 +32,7 @@ public class verticalOrder {
     private static List<List<Integer>>  findVertical(Tree root) {
        dfstree(root,0,0);
         List<List<Integer>> result = new ArrayList<>();
-       print(map);
+       //print(map);
         for(ArrayList<int[]> list:map.values()){
             Collections.sort(list,(a,b)->a[0]==b[0]?Integer.compare(a[1],b[1]):Integer.compare(a[0],b[0]));
             ArrayList<Integer> current = new ArrayList<>();
