@@ -1,0 +1,24 @@
+IOC : manage bean life cycle
+Application context
+    1. Class Path XML Application context
+    2.
+    3.Annotation
+
+POM.xml: spring core , spring context
+
+// setter injection
+<beans>
+    <bean class="fully classified name" name ="object name ">
+        <property name="studentId">
+            <value>123</value>
+        </property>
+        --- using p schema ---
+         <bean class="fully classified name" name ="object name " p:studentId="123"/>
+         --- reference type A need B
+         <bean>
+            <property name="ob">       private B ob;
+                <ref bean="b"/>
+            </property>
+         </bean>
+    </bean>
+</beans>
