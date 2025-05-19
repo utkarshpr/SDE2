@@ -6,7 +6,8 @@ Application context
 
 POM.xml: spring core , spring context
 
-// setter injection
+setter injection
+------------------------------------------------------------------------------------------------------------
 <beans>
     <bean class="fully classified name" name ="object name ">
         <property name="studentId">
@@ -22,3 +23,77 @@ POM.xml: spring core , spring context
          </bean>
     </bean>
 </beans>
+
+constructor injection
+------------------------------------------------------------------------------------------------------------
+<beans>
+    <bean class="fully classified name" name ="object name ">
+        <constructor-args value="123" type="int"/> -- by default we take as string so java tries to find out with string constructor if not then increasing order of constructor
+        <constructor-args ref="obj_name"/>
+        ---- using c schema -------
+        <constructor-args ref="obj_name" c:name="hello java" />
+    </bean>
+</beans>
+
+Ambiguity problem :
+------------------------------------------------------------------------------------------------------------
+<constructor-args value="123" type="int"/>
+    -- by default we take as string so java tries to find out with string constructor if not then increasing order of constructor
+    using type ::
+
+Life Cycle Methods
+------------------------------------------------------------------------------------------------------------
+public void init()
+    - Initialization of code , db , webservice
+
+public void destroy()
+    - Clean up code
+
+    in the bean tag we can write init-method="init/your_method_name" destroy-method="destroy/your_method_name"
+
+config init/destroy (rather than XML file ::)
+    in interface
+            class c1 implements InitializingBean ,DisposableBean
+    in annotation
+            @postConstruct @preDestroy
+            additional dependency javax.annotation
+            config.xml
+                <context:annotation-config/> enable all the annotation in spring project **
+
+Autowiring
+------------------------------------------------------------------------------------------------------------
+1. XML
+    no
+    byName -
+        bean -> autowire="byName" (search variable name ie. Address address  (address)bean name in config and take those value
+    byType
+        -> search with address type rather than name if name is diff then it will take based on type of address(class full path)
+    constructor
+2. Annotation
+    @Autowire
+    if two such bean is there but (bean found 2 Expected 1)
+
+@Qualifier
+------------------------------------------------------------------------------------------------------------
+we provide name to both beans and inside qualifier ("name of bean") so it will call the bean
+
+StereoType Annotation
+------------------------------------------------------------------------------------------------------------
+<context: component-scan base-package=""/>
+@component("name of object ")
+class Student
+
+it will try to create a bean of student and we can use wherever we want
+@value to fill
+
+Bean scope
+------------------------------------------------------------------------------------------------------------
+singleton
+prototype
+
+@scope("?") or <bean class="fully classified name" name ="object name " scope="?">
+
+SPRING ORM
+------------------------------------------------------------------------------------------------------------
+tranx manage code
+session closed code
