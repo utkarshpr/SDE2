@@ -17,17 +17,17 @@ public class Main {
 
         System.out.println("\n----- Vending Machine Example -----");
 
-        // Vending Machine Dispensers
-        Dispenser chips = new VendingDispenser("A1", "Chips", 2);
-        Dispenser soda = new VendingDispenser("B2", "Soda", 1);
-        Dispenser candy = new VendingDispenser("C3", "Candy", 0);
-
-        chips.setNext(soda);
-        soda.setNext(candy);
-
-        // Simulate item selection
-        chips.dispense(new ItemRequest("B2"));
-        chips.dispense(new ItemRequest("C3"));
-        chips.dispense(new ItemRequest("A1"));
+//        // Vending Machine Dispensers
+//        Dispenser chips = new VendingDispenser("A1", "Chips", 2);
+//        Dispenser soda = new VendingDispenser("B2", "Soda", 1);
+//        Dispenser candy = new VendingDispenser("C3", "Candy", 0);
+//
+//        chips.setNext(soda);
+//        soda.setNext(candy);
+//
+//        // Simulate item selection
+//        chips.dispense(new ItemRequest("B2"));
+//        chips.dispense(new ItemRequest("C3"));
+//        chips.dispense(new ItemRequest("A1"));
     }
 }
