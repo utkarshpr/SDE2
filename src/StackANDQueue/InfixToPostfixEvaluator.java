@@ -78,7 +78,7 @@ public class InfixToPostfixEvaluator {
     }
 
     public static void main(String[] args) {
-        String expression = "51+5*3+5*8";
+        String expression = "(5+10)*(5-1)";
         System.out.println("Infix: " + expression);
 
         String postfix = infixToPostfix(expression);
